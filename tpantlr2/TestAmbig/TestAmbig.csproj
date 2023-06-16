@@ -1,0 +1,43 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+	<ItemGroup>
+		<None Remove="E.input" />
+		<None Remove="E2.input" />
+		<None Remove="E3.input" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Content Include="E3.input">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="E2.input">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="E.input">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Antlr4.Runtime.Standard" Version="4.10.1" />
+		<PackageReference Include="Antlr4BuildTasks" Version="10.7" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Antlr4 Include="Ambig.g4">
+			<Listener>false</Listener>
+			<Visitor>false</Visitor>
+			<GAtn>false</GAtn>
+			<Package>TestAmbig</Package>
+			<Error>true</Error>
+		</Antlr4>
+	</ItemGroup>
+	
+</Project>

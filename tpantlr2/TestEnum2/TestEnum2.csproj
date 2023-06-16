@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="input1" />
+    <None Remove="input2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="input1">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="input2">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Antlr4.Runtime.Standard" Version="4.10.1" />
+		<PackageReference Include="Antlr4BuildTasks" Version="10.7" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Antlr4 Include="Enum2.g4">
+			<Listener>false</Listener>
+			<Visitor>false</Visitor>
+			<GAtn>false</GAtn>
+			<Package>TestEnum2</Package>
+			<Error>true</Error>
+		</Antlr4>
+	</ItemGroup>
+	
+</Project>

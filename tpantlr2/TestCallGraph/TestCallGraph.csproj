@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+	<ItemGroup>
+		<None Remove="t.cymbol" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Content Include="t.cymbol">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Antlr4.Runtime.Standard" Version="4.10.1" />
+		<PackageReference Include="Antlr4BuildTasks" Version="10.7" />
+		<PackageReference Include="StringTemplate4" Version="4.0.8" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Antlr4 Include="Cymbol.g4">
+			<Listener>true</Listener>
+			<Visitor>false</Visitor>
+			<GAtn>false</GAtn>
+			<Package>TestCallGraph</Package>
+			<Error>true</Error>
+		</Antlr4>
+	</ItemGroup>
+	
+</Project>
